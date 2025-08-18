@@ -1,0 +1,30 @@
+# ---------- Etapa de compilación ----------
+FROM golang:1.22-alpine AS builder
+
+# Directorio de trabajo dentro del contenedor
+WORKDIR /app
+
+# Copiar archivos de dependencias
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copiar el resto del código fuente
+COPY . .
+
+# Compilar la aplicación (se genera un binario llamado api1)
+RUN CGO_ENABLED=0 GOOS=linux go build -o api1 main.go
+
+# ---------- Etapa final (imagen ligera) ----------
+FROM alpine:3.22
+
+# Directorio de trabajo
+WORKDIR /app
+
+# Copiar el binario compilado desde la etapa anterior
+COPY --from=builder /app/api1 .
+
+# Exponer el puerto en el que corre tu API
+EXPOSE 8081
+
+# Ejecutar el binario
+CMD ["./api1"]
