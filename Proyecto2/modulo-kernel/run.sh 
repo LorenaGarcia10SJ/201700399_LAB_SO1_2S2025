@@ -1,0 +1,37 @@
+#!/bin/bash
+# Script para compilar y probar el módulo continfo
+
+MODULE=continfo
+PROC_FILE=/proc/continfo_so1_201700399
+
+echo "=== LIMPIANDO COMPILACIÓN ANTERIOR ==="
+make clean
+
+echo "=== COMPILANDO MÓDULO ==="
+make
+
+if [ $? -ne 0 ]; then
+    echo "❌ Error en la compilación"
+    exit 1
+fi
+
+echo "=== ELIMINANDO MÓDULO PREVIO (si existe) ==="
+sudo rmmod $MODULE 2>/dev/null
+
+echo "=== INSERTANDO MÓDULO NUEVO ==="
+sudo insmod $MODULE.ko
+
+if [ $? -ne 0 ]; then
+    echo " Error al insertar el módulo"
+    exit 1
+fi
+
+echo "=== MENSAJES DEL KERNEL ==="
+sudo dmesg | tail -n 10
+
+echo "=== CONTENIDO DEL ARCHIVO EN /proc ==="
+if [ -f "$PROC_FILE" ]; then
+    cat $PROC_FILE
+else
+    echo "El archivo $PROC_FILE no existe"
+fi
