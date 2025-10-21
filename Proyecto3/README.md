@@ -47,7 +47,7 @@ proyecto3/
    --go-grpc_out=go_grpc_server/proto \
    weathertweet.proto
 
-   sudo docker build -t server-go .
+   sudo docker build -t server-go:v1 .
    ```
 3. Subir a Zot:
    ```bash
@@ -92,3 +92,57 @@ docker push hypostatic-curvier-izabella.ngrok-free.dev/api-rust:v1
 
 docker tag server-go:v1 hypostatic-curvier-izabella.ngrok-free.dev/server-go:v1
 docker push hypostatic-curvier-izabella.ngrok-free.dev/server-go:v1
+
+# Arquitectura General
+                ┌─────────────┐
+                │  Locust     │   ← Genera tráfico (simula tweets)
+                └─────┬───────┘
+                      │
+                      ▼
+        ┌─────────────────────────┐
+        │ Ingress NGINX (K8s)     │ ← Entrada al cluster
+        └──────────┬──────────────┘
+                   ▼
+        ┌─────────────────────────┐
+        │ API REST (Rust)         │ ← Recibe tweets por HTTP
+        └──────────┬──────────────┘
+                   ▼
+        ┌─────────────────────────┐
+        │ Go gRPC Server          │ ← Procesa el tweet recibido
+        └───────┬────────────────┘
+                ▼
+     ┌────────────────────┐   ┌────────────────────┐
+     │ Kafka Writer (Go)  │   │ RabbitMQ Writer(Go)│ ← Publican mensajes
+     └────────────────────┘   └────────────────────┘
+                │                      │
+                ▼                      ▼
+     ┌────────────────────┐   ┌────────────────────┐
+     │ Kafka Consumer (Go)│   │ RabbitMQ Consumer  │ ← Leen y procesan
+     └──────────┬─────────┘   └──────────┬─────────┘
+                ▼                      ▼
+                   ┌────────────────┐
+                   │ Valkey (DB RAM)│ ← Guarda los datos del clima
+                   └────────────────┘
+                            │
+                            ▼
+                   ┌────────────────┐
+                   │ Grafana        │ ← Visualiza los datos
+                   └────────────────┘
+
+# LOCUST
+
+http://localhost:8089/?tab=charts
+
+### Construir y cargar
+docker build -t locust_local:latest .
+docker run --rm -p 8089:8089 locust_local:latest
+
+### Ver ip externa de grafana
+kubectl get service grafana-service
+
+### Abrir en navegador
+
+http://34.29.148.237:3000/
+
+Usuario: admin
+Contraseña: admin
