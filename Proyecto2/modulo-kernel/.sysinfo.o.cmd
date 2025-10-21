@@ -1,8 +1,8 @@
-cmd_/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/continfo.o := gcc -Wp,-MD,/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/.continfo.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/9/include  -I./arch/x86/include -I./arch/x86/include/generated  -I./include -I./arch/x86/include/uapi -I./arch/x86/include/generated/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/kconfig.h -Iubuntu/include  -include ./include/linux/compiler_types.h -D__KERNEL__ -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Werror=return-type -Wno-format-security -std=gnu89 -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -fcf-protection=none -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -DCONFIG_X86_X32_ABI -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_SSSE3=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -DCONFIG_AS_AVX512=1 -DCONFIG_AS_SHA1_NI=1 -DCONFIG_AS_SHA256_NI=1 -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -fno-jump-tables -fno-delete-null-pointer-checks -Wno-frame-address -Wno-format-truncation -Wno-format-overflow -Wno-address-of-packed-member -O2 --param=allow-store-data-races=0 -Wframe-larger-than=1024 -fstack-protector-strong -Wimplicit-fallthrough -Wno-unused-but-set-variable -Wno-unused-const-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -mrecord-mcount -mfentry -DCC_USING_FENTRY -flive-patching=inline-clone -Wdeclaration-after-statement -Wvla -Wno-pointer-sign -Wno-stringop-truncation -Wno-array-bounds -Wno-stringop-overflow -Wno-restrict -Wno-maybe-uninitialized -fno-strict-overflow -fno-merge-all-constants -fmerge-constants -fno-stack-check -fconserve-stack -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -fmacro-prefix-map=./= -Wno-packed-not-aligned  -DMODULE  -DKBUILD_BASENAME='"continfo"' -DKBUILD_MODNAME='"continfo"' -c -o /home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/continfo.o /home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/continfo.c
+cmd_/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/sysinfo.o := gcc -Wp,-MD,/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/.sysinfo.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/9/include  -I./arch/x86/include -I./arch/x86/include/generated  -I./include -I./arch/x86/include/uapi -I./arch/x86/include/generated/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/kconfig.h -Iubuntu/include  -include ./include/linux/compiler_types.h -D__KERNEL__ -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Werror=return-type -Wno-format-security -std=gnu89 -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -fcf-protection=none -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -DCONFIG_X86_X32_ABI -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_SSSE3=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -DCONFIG_AS_AVX512=1 -DCONFIG_AS_SHA1_NI=1 -DCONFIG_AS_SHA256_NI=1 -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -fno-jump-tables -fno-delete-null-pointer-checks -Wno-frame-address -Wno-format-truncation -Wno-format-overflow -Wno-address-of-packed-member -O2 --param=allow-store-data-races=0 -Wframe-larger-than=1024 -fstack-protector-strong -Wimplicit-fallthrough -Wno-unused-but-set-variable -Wno-unused-const-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -mrecord-mcount -mfentry -DCC_USING_FENTRY -flive-patching=inline-clone -Wdeclaration-after-statement -Wvla -Wno-pointer-sign -Wno-stringop-truncation -Wno-array-bounds -Wno-stringop-overflow -Wno-restrict -Wno-maybe-uninitialized -fno-strict-overflow -fno-merge-all-constants -fmerge-constants -fno-stack-check -fconserve-stack -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -fmacro-prefix-map=./= -Wno-packed-not-aligned  -DMODULE  -DKBUILD_BASENAME='"sysinfo"' -DKBUILD_MODNAME='"sysinfo"' -c -o /home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/sysinfo.o /home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/sysinfo.c
 
-source_/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/continfo.o := /home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/continfo.c
+source_/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/sysinfo.o := /home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/sysinfo.c
 
-deps_/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/continfo.o := \
+deps_/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/sysinfo.o := \
   include/linux/kconfig.h \
     $(wildcard include/config/cpu/big/endian.h) \
     $(wildcard include/config/booger.h) \
@@ -861,30 +861,6 @@ deps_/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proy
     $(wildcard include/config/posix/mqueue.h) \
     $(wildcard include/config/bpf/syscall.h) \
   include/linux/ratelimit.h \
-  include/linux/sched/signal.h \
-    $(wildcard include/config/sched/autogroup.h) \
-    $(wildcard include/config/bsd/process/acct.h) \
-    $(wildcard include/config/taskstats.h) \
-    $(wildcard include/config/stack/growsup.h) \
-  include/linux/signal.h \
-  include/linux/sched/jobctl.h \
-  include/linux/sched/task.h \
-    $(wildcard include/config/have/copy/thread/tls.h) \
-    $(wildcard include/config/have/exit/thread.h) \
-    $(wildcard include/config/arch/wants/dynamic/task/struct.h) \
-    $(wildcard include/config/have/arch/thread/struct/whitelist.h) \
-  include/linux/uaccess.h \
-  arch/x86/include/asm/uaccess.h \
-    $(wildcard include/config/cc/has/asm/goto/tied/output.h) \
-    $(wildcard include/config/x86/intel/usercopy.h) \
-  arch/x86/include/asm/smap.h \
-  arch/x86/include/asm/extable.h \
-  arch/x86/include/asm/uaccess_64.h \
-  include/linux/sched/mm.h \
-    $(wildcard include/config/arch/has/membarrier/callbacks.h) \
-  include/linux/sync_core.h \
-    $(wildcard include/config/arch/has/sync/core/before/usermode.h) \
-  arch/x86/include/asm/sync_core.h \
   include/linux/mm.h \
     $(wildcard include/config/have/arch/mmap/rnd/bits.h) \
     $(wildcard include/config/have/arch/mmap/rnd/compat/bits.h) \
@@ -893,6 +869,7 @@ deps_/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proy
     $(wildcard include/config/ppc.h) \
     $(wildcard include/config/parisc.h) \
     $(wildcard include/config/sparc64.h) \
+    $(wildcard include/config/stack/growsup.h) \
     $(wildcard include/config/shmem.h) \
     $(wildcard include/config/arch/has/pte/devmap.h) \
     $(wildcard include/config/dev/pagemap/ops.h) \
@@ -926,6 +903,13 @@ deps_/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proy
     $(wildcard include/config/have/arch/soft/dirty.h) \
     $(wildcard include/config/arch/enable/thp/migration.h) \
   arch/x86/include/asm/fpu/xstate.h \
+  include/linux/uaccess.h \
+  arch/x86/include/asm/uaccess.h \
+    $(wildcard include/config/cc/has/asm/goto/tied/output.h) \
+    $(wildcard include/config/x86/intel/usercopy.h) \
+  arch/x86/include/asm/smap.h \
+  arch/x86/include/asm/extable.h \
+  arch/x86/include/asm/uaccess_64.h \
   arch/x86/include/asm/fpu/api.h \
     $(wildcard include/config/x86/debug/fpu.h) \
   arch/x86/include/asm/pgtable_64.h \
@@ -943,16 +927,18 @@ deps_/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proy
   include/linux/vm_event_item.h \
     $(wildcard include/config/memory/balloon.h) \
     $(wildcard include/config/balloon/compaction.h) \
-  include/linux/slab.h \
-    $(wildcard include/config/debug/slab.h) \
-    $(wildcard include/config/failslab.h) \
-    $(wildcard include/config/have/hardened/usercopy/allocator.h) \
-    $(wildcard include/config/slab.h) \
-    $(wildcard include/config/slub.h) \
-    $(wildcard include/config/slob.h) \
-  include/linux/kasan.h \
-    $(wildcard include/config/kasan/generic.h) \
+  include/linux/sched/signal.h \
+    $(wildcard include/config/sched/autogroup.h) \
+    $(wildcard include/config/bsd/process/acct.h) \
+    $(wildcard include/config/taskstats.h) \
+  include/linux/signal.h \
+  include/linux/sched/jobctl.h \
+  include/linux/sched/task.h \
+    $(wildcard include/config/have/copy/thread/tls.h) \
+    $(wildcard include/config/have/exit/thread.h) \
+    $(wildcard include/config/arch/wants/dynamic/task/struct.h) \
+    $(wildcard include/config/have/arch/thread/struct/whitelist.h) \
 
-/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/continfo.o: $(deps_/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/continfo.o)
+/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/sysinfo.o: $(deps_/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/sysinfo.o)
 
-$(deps_/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/continfo.o):
+$(deps_/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/sysinfo.o):

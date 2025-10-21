@@ -1,0 +1,15 @@
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    fmt.Println("go_writer_kafka started - placeholder")
+    for {
+        // Simula worker listo para publicar en Kafka
+        fmt.Println("Kafka writer idle - waiting for messages...")
+        time.Sleep(10 * time.Second)
+    }
+}

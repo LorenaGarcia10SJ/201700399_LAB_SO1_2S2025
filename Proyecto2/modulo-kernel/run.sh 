@@ -11,7 +11,7 @@ echo "=== COMPILANDO MÓDULO ==="
 make
 
 if [ $? -ne 0 ]; then
-    echo "❌ Error en la compilación"
+    echo "Error en la compilación"
     exit 1
 fi
 

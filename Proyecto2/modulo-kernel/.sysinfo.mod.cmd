@@ -1,0 +1,1 @@
+cmd_/home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/sysinfo.mod := { echo  /home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/sysinfo.o;  echo; } > /home/oem/Documentos/USAC/Semestre2025/SOPES1/201700399_LAB_SO1_2S2025/Proyecto2/modulo-kernel/sysinfo.mod

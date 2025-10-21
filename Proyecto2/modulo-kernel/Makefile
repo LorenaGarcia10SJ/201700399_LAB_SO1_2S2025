@@ -1,4 +1,4 @@
-obj-m += continfo.o
+obj-m += sysinfo.o continfo.o
 
 KDIR := /lib/modules/$(shell uname -r)/build
 PWD  := $(shell pwd)
@@ -8,3 +8,5 @@ all:
 
 clean:
 	make -C $(KDIR) M=$(PWD) clean
+
+

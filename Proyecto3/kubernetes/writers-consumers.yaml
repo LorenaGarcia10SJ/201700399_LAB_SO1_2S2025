@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: writer-kafka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: writer-kafka
+  template:
+    metadata:
+      labels:
+        app: writer-kafka
+    spec:
+      containers:
+      - name: writer-kafka
+        image: <ZOT_IP>:5000/go_writer_kafka:latest
+        ports:
+        - containerPort: 9100
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: writer-rabbitmq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: writer-rabbitmq
+  template:
+    metadata:
+      labels:
+        app: writer-rabbitmq
+    spec:
+      containers:
+      - name: writer-rabbitmq
+        image: <ZOT_IP>:5000/go_writer_rabbitmq:latest
+        ports:
+        - containerPort: 9200
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consumer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consumer
+  template:
+    metadata:
+      labels:
+        app: consumer
+    spec:
+      containers:
+      - name: consumer
+        image: <ZOT_IP>:5000/consumers:latest
+        ports:
+        - containerPort: 9300
