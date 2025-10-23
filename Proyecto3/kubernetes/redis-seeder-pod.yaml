@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-seeder
+spec:
+  containers:
+  - name: seeder
+    image: python:3.12
+    command: ["sleep", "3600"]  # el pod queda activo para poder ejecutar comandos
+    volumeMounts:
+    - name: scripts
+      mountPath: /scripts
+  volumes:
+  - name: scripts
+    configMap:
+      name: redis-seeder-scripts
+  restartPolicy: Never

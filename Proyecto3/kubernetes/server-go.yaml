@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: server-go
-        image: hypostatic-curvier-izabella.ngrok-free.dev/server-go:v1
+        image: hypostatic-curvier-izabella.ngrok-free.dev/server-go:v2
         imagePullPolicy: Always
         ports:
         - containerPort: 50051

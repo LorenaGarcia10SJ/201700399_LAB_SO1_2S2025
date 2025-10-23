@@ -1,5 +1,7 @@
 use actix_web::{post, get, web, App, HttpResponse, HttpServer, Responder};
 use serde::{Deserialize, Serialize};
+//use redis::AsyncCommands; // nuevo
+//use tokio;
 // use tonic::transport::Channel;
 
 pub mod weathertweet {
@@ -53,6 +55,23 @@ async fn clima(data: web::Json<WeatherInput>) -> impl Responder {
         Ok(response) => {
             let resp: WeatherTweetResponse = response.into_inner();
             println!("Respuesta gRPC: {:?}", resp);
+
+            /* // 👇 Guardar en Valkey
+            let valkey_url = std::env::var("VALKEY_URL")
+                .unwrap_or("redis://valkey-service:6379".to_string());
+
+            // ⚡ Obtener conexión async correctamente
+            if let Ok(client) = redis::Client::open(valkey_url) {
+                match client.get_async_connection().await {
+                    Ok(mut conn) => {
+                        let key = format!("clima:{}", chrono::Utc::now().timestamp_millis());
+                        let value = serde_json::to_string(&data.into_inner()).unwrap_or_default();
+                        let _: Result<(), _> = conn.set(key, value).await;
+                    }
+                    Err(e) => println!("Error conexión Redis async: {}", e),
+                }
+            } */
+
             HttpResponse::Ok().json(resp)
         }
         Err(e) => HttpResponse::InternalServerError().body(format!("Error gRPC: {}", e)),

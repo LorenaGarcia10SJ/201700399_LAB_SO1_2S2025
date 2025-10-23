@@ -1,6 +1,6 @@
-FROM golang:1.22-alpine
+FROM golang:1.25.3-alpine
 WORKDIR /app
 COPY . .
-RUN go build -o writer .
-EXPOSE 9100
-CMD ["./writer"]
+RUN go build -o writer_kafka .
+EXPOSE 8082
+CMD ["./writer_kafka"]

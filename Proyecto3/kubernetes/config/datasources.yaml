@@ -1,0 +1,12 @@
+apiVersion: 1
+
+datasources:
+  - name: Redis
+    type: redis-datasource
+    access: proxy
+    orgId: 1
+    url: redis://valkey-service:6379
+    isDefault: true
+    jsonData:
+      client: standalone
+      poolSize: 5

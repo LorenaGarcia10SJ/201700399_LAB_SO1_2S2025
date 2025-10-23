@@ -1,0 +1,49 @@
+{
+  "id": null,
+  "title": "Dashboard 201700399",
+  "timezone": "browser",
+  "schemaVersion": 36,
+  "version": 1,
+  "panels": [
+    {
+      "type": "barchart",
+      "title": "Humedad Promedio por Municipio",
+      "targets": [
+        {
+          "query": "FT.AGGREGATE clima \"*\" GROUPBY 1 @municipality REDUCE AVG 1 @humidity AS avg_humidity",
+          "type": "redis"
+        }
+      ]
+    },
+    {
+      "type": "barchart",
+      "title": "Temperatura Promedio por Municipio",
+      "targets": [
+        {
+          "query": "FT.AGGREGATE clima \"*\" GROUPBY 1 @municipality REDUCE AVG 1 @temperature AS avg_temp",
+          "type": "redis"
+        }
+      ]
+    },
+    {
+      "type": "barchart",
+      "title": "Total de Reportes por Condición Climática",
+      "targets": [
+        {
+          "query": "FT.AGGREGATE clima \"*\" GROUPBY 1 @weather REDUCE COUNT 0 AS count",
+          "type": "redis"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Serie Temporal: Municipio Chinautla (Carnet 201700399)",
+      "targets": [
+        {
+          "query": "FT.AGGREGATE clima \"@municipality:chinautla\" GROUPBY 1 @timestamp REDUCE AVG 1 @temperature AS avg_temp REDUCE AVG 1 @humidity AS avg_hum",
+          "type": "redis"
+        }
+      ]
+    }
+  ]
+}
